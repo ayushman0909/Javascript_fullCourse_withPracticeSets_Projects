@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout & Clear Timeout</title>
+</head>
+<body>
+    <h1>Set Timeout & Clear Timeout</h1>
+    <button>Click Me to clear timeout</button>
+</body>
+<script>
+    const ChangeText=setTimeout(()=>{
+        document.querySelector("h1").innerText="Ayushman js"
+    },2000);
+
+   document.querySelector("button").addEventListener("click",()=>{
+    console.log("stopped!");
+    
+    clearTimeout(ChangeText)
+   })
+</script>
+</html>

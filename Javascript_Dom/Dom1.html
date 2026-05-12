@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            color: white;
+            background-color: grey;
+        }
+    </style>
+    
+    <title>Dom(document object model)</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thrusday</div>
+        <div class="day">friday</div>
+        <div class="day">saturday</div>
+        <div class="day">sunday</div>
+    </div>
+</body>
+<script>
+    const parent=document.querySelector(".parent");
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    const Dayone=document.querySelector(".day");
+    // console.log(Dayone.parentElement);
+    // console.log(Dayone.nextElementSibling);
+    // console.log("Nodes",parent.childNodes);
+
+
+const body=document.querySelector("body");
+  const div=document.createElement("div");
+  div.classList.add("firstdiv");
+  div.classList.remove("firstdiv");
+  div.innerText="ayushman";
+  body.appendChild(div)
+  console.log(div);
+  
+    
+    
+</script>
+</html>
+
+// difference between innerText and TextContent is if we hide something with css then it willl not show i innertext but it will show in textcontent

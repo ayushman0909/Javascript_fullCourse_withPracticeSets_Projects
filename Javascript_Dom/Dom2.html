@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 2</title>
+</head>
+<body style="background-color: gray; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    const ul=document.querySelector(".language");
+    const addLang=(LangName)=>{
+        const newLi=document.createElement("li");
+        const LanguageText=document.createTextNode(LangName);  // if we use here li.innertext=langName then it travese all the li then add at last which is not that much optimised
+        newLi.appendChild(LanguageText);
+        ul.appendChild(newLi);
+    }
+     addLang("Java");
+     addLang("Python");
+
+
+     // edit 
+     const secondlang=document.querySelector("li:nth-child(2)");
+    // secondlang.innerHTML="c++" // ok but not optimised for big projects
+    const newSecondLang=document.createElement("li");
+    
+    newSecondLang.appendChild( document.createTextNode("c++"));
+    secondlang.replaceWith(newSecondLang);
+
+
+    //remove
+
+    const LastLang=document.querySelector('li:last-child');
+    LastLang.remove();
+
+</script>
+</html>

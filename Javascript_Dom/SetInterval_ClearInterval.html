@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval and Clear Interval</title>
+</head>
+<body>
+    <h1>Set Interval and Clear Interval</h1>
+    <button class="startBtn">Start</button>
+    <button class="stopBtn">Stop</button>
+</body>
+<script>
+    
+    const startBtn=document.querySelector(".startBtn");
+    const stopBtn=document.querySelector(".stopBtn");
+    let printing=false;
+    let intervalId;
+   const Start=()=>{
+   
+    if(!printing){
+        printing=true;
+    intervalId=setInterval(()=>{
+      const heading=document.createElement("h1");
+    heading.appendChild(document.createTextNode("hello"));
+    document.querySelector("body").appendChild(heading);
+    },1000);
+    } 
+   }
+   const Stop=()=>{
+    clearInterval(intervalId);
+    printing=false;
+   }
+   startBtn.addEventListener("click",Start);
+   stopBtn.addEventListener("click",Stop);
+</script>
+</html>

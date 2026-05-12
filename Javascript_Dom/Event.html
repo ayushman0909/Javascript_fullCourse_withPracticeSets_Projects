@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="display: flex; flex-direction: column; border: 1px solid black;">
+        <img src="unnamed.webp" class="Images" alt="" width="200" id="Image" style="border: 1px solid black;">
+        <img src="download (1).jpg" class="Images" alt="" width="200" id="Image2" style="border: 1px solid black;">
+        <img src="unnamed.webp" class="Images" alt="" width="200" id="Image3" style="border: 1px solid black;">
+        <img src="download.jpg" class="Images" alt="" width="200" id="Image4" style="border: 1px solid black;">
+    </div>
+</body>
+<script>
+   
+    //Event propagation has two context 
+    // 1.event bubbling
+    //2.event capturing
+
+    // now let us understood both 
+//  document.getElementsByClassName("container").addEventListener("click",(e)=>{
+//        console.log("container clicked");
+       
+//     },false)// if not written false it is false by default which is called event bubbling
+     
+    // document.getElementsById("Image").addEventListener("click",(e)=>{
+    //    console.log("image clicked");
+       
+    // });// no false no true it means it is false only
+
+    // now see if i click on image then it both get activated because inside container image is there so i case of event bubbling(false) , the deep one means image console will show 
+    // and in case of event capturing(true), the upper container get trigger first
+    
+    // to stop event bubbling we can use e.stopPropation() then only inside one get triggeed
+    // e.preventDefault() mainly used with form
+
+    const ImageContainer=document.querySelector(".container");
+    const Images=document.querySelectorAll(".Images");
+    Images.forEach((image)=>{
+        image.addEventListener("click",(e)=>{
+            console.log(`clicked on image with id ${e.target.id}`);
+            
+            e.target.style.display="none"
+        })
+    })
+</script>
+</html>
