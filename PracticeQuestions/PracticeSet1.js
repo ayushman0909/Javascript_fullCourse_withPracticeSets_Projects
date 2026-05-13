@@ -188,12 +188,182 @@ console.log(newname2);
 //Q-30
 
 const str = "Ayushman";
-console.log(str.slice(-8,3)); //Ayu because in slice if we place - then it reset to 0 and 3rd is excluded
+console.log(str.slice(-8,3)); // here -8 means starting from end n is -1 so the -8 isA
+
+//Q-31
+const str2="kitu";
+console.log(str2.substring(-5,2)); // in case of substring it do not support - so it get 0
+
+//Q-32
+
+ console.log("Ayush".split("")); //["A","y","u","s","h"] nothing inside "" means split each 
+
+ //Q-33
+ console.log([1,2,3].join()); // 1,2,3 join convert each element of array into string and by default seperated by ,
+
+ //Q-34
+
+ console.log(typeof []); //object
+ console.log(typeof {}); // object
+ console.log(typeof function(){}); //function 
+
+//Q-35
+
+// Hoisting means:
+
+// JavaScript moves declarations to the top before execution.
+
+// console.log(a); it will give undefined 
+// let a=10;
+// because internally js is seeing this like 
+// let a; 
+// console.log(a);
+// a=10;
 
 
 
+//Q-36
+console.log(s);
+var s = 10; // undefined same upper one logic
+
+//Q-37
+
+//Explain temporal dead zone.
+
+//The time between variable hoisting and variable initialization where the variable cannot be accessed.
 
 
+
+//Q-38
+
+{
+  let num = 10;
+}
+// console.log(num); // block scope cannot be used outside scope
+
+
+//Q-39
+if(true){
+   var num2 = 100;
+}
+console.log(num2); // var do not follow scope can be able to use 
+
+//Q-40
+
+
+const t=[1,2];
+t.push(3);
+console.log(t); //[1,2,3] because it follows heap memory concept operation peroforms on original array
+
+
+//Q-41
+
+const obj = {
+  name:"Ayush"
+}
+obj.name="Kittu";
+console.log(obj); // {name:"kittu"} // same heap memory concept
+
+
+//Q-42
+
+console.log(typeof NaN); // number
+
+//Q-43
+
+// Explain:
+
+// truthy values
+// falsy values
+
+//Q-44
+
+// Difference between:
+
+// function declaration
+
+sum()
+function sum(){
+    console.log("hello");
+    
+}
+// it is fullly hoisted and print hello declaration goes on top 
+
+// but function expression
+
+// when function stored in variable
+// sum2()
+const sum2=function(){
+    console.log("hello");
+    
+} 
+//error because it do not suppport hoisting
+
+//Q-45
+
+hello();
+
+function hello(){
+ console.log("hello");
+}   // hello same soncept of function declation
+
+
+//Q-46
+
+// Difference between:
+
+// normal function
+// arrow function
+
+//Normal function 
+
+// it has its own this 
+// it supports hoisting features
+
+// arrow function 
+
+// it has not its own this .using this efers to window object
+// it do not supports hoisting features
+
+
+//Q-47
+
+function outer(){
+ let name="Ayush";
+
+ function inner(){
+   console.log(name);
+ }
+
+ return inner;
+}
+
+outer()(); // Immediately Invoked Function Expressions(IIFE) it get excuted automatically when saved
+
+//Q-48
+// Difference between: 
+// rest operator
+// spread operator
+
+// rest operator
+function AllNum(...numbers){
+   console.log(numbers);
+}
+
+AllNum(1,2,3,4); // 1 2 3 4 
+
+//spread 
+
+let g = [1,2,3];
+
+console.log(...g);  //1 2 3
+
+
+let f=[...g,4,5];
+console.log(f);//[1,2,3,4,5]
+
+
+//Q-49
 
 
 
