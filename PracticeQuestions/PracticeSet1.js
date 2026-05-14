@@ -365,6 +365,159 @@ console.log(f);//[1,2,3,4,5]
 
 //Q-49
 
+// Difference between:
+// forEach
+// map
+//filter
+//reduce
+
+//forEach
+const books=["eng","hindi","sanskrit","math"];
+books.forEach((book)=>console.log(book)); // used to loop only  nothing is return return is undefined
+
+//map
+const resultt=books.map((book,index)=>{ // first one is elements of array and second is index
+   return `New ${book}`
+});     // here we use map to loop as well as to create new array
+
+console.log(resultt);
+
+//filter
+
+const newbooks=books.filter((book)=>book!=="eng");
+console.log(newbooks);
+console.log(books);
+
+
+//reduce 
+
+const numbers=[1,2,3,4];
+const sumresult=numbers.reduce((acc,curr)=>{
+  return acc+curr;
+})
+console.log(sumresult);
 
 
 
+//Q-50
+
+const arr7=[1,2,3];
+const result3=arr7.map(num=>num*2);
+console.log(result3); [2,4,6]
+
+
+//Q-51
+
+const arr8=[1,2,3,4];
+const result4=arr8.filter(num=>num>2);
+console.log(result4); [3,4]
+
+
+//Q-52
+
+const arr9=[1,2,3];
+const result5=arr9.reduce((acc,curr)=>acc+curr,0); // here 2 means acc initalise with 2 first by default it is 0 i.e 0+1,then 1+2 then 3+3
+console.log(`answer of question 52 no is ${result5}`);
+
+
+//Q-53
+
+const ob={a:1,b:2};
+
+for(let key in ob){
+ console.log(key);
+}     //it will print all the key like a,b 
+
+//Q-54
+
+const arr10=[10,20,30];
+
+for(let value of arr10){
+ console.log(value);
+} //10,20,30
+
+//Q-55
+
+const user={
+ name:"Ayush",
+ greet:function(){
+   console.log(this.name);
+ }
+}
+user.greet(); //Ayush
+
+//Q-56
+const user_={
+ name:"Ayush",
+ greet:()=>{
+   console.log(this.name);
+ }
+}
+
+user_.greet(); //undefined becuse in case of arrow functio this refers to window scope
+
+//Q-57
+
+function User(name){
+ this.name=name;
+}
+
+const u1=new User("Ayush");
+console.log(u1); // {name:"ayush"}
+
+
+//Q-58
+
+const obj2={
+ name1:"Ayush",
+ age:20
+}
+
+const {name1,age}=obj2;
+console.log(name1); //Ayush destructuring of object
+
+
+//Q-59
+
+// What is singleton object?
+
+//const user = {
+//    name: "Ayush"
+// };
+
+//Q-60
+const sym = Symbol("id");
+
+const obj3 = {
+ [sym]:123
+}
+
+console.log(obj3[sym]); //123
+console.log(typeof sym); //symbol
+
+//Q-61
+
+const name__="Ayush";
+console.log(`Hello ${name__}`);//Hello Ayush
+
+//Q-62
+//  only outer level is copied is called shallow copy 
+//  all copied known as deep copy 
+let arr11 = [1,2,[3,4]];
+
+let arr12 = [...arr11]; // spread operator copy only first level
+ 
+arr12[2][0] = 100;
+
+console.log(arr11);
+console.log(arr12); 
+
+
+//Q-63
+
+const obj8={a:1};
+const obj9=obj8;
+
+obj9.a=100;
+
+console.log(obj8.a); //100 it follows heap memory concept 
